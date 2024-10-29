@@ -10,7 +10,8 @@ def normalize0(x):
     for n in range(N):
         x[n] -= np.mean(x[n])
         x[n] = x[n]/np.linalg.norm(x[n])
-    return np.reshape(x,(N,L*L)).astype("float32")
+    x = np.reshape(x,(N,L*L))
+    return x
 
 def normalize(x):
     (N,L,L) = np.shape(x)
@@ -34,10 +35,9 @@ def vclass(xl,K):
     
 def skiresize(x,s):
     (N,l,l) = np.shape(x)
-    L = s*l
-    y = np.zeros((N,int(L),int(L)),dtype="float32")
+    y = np.zeros((N,int(s*l),int(s*l)),dtype="float32")
     for n in range(len(x)):
-        y[n] = resize(x[n],(int(L),int(L)))
+        y[n] = resize(x[n],(int(s*l),int(s*l)))
     return y
     
 def random_weights(M,q):
