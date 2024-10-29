@@ -1,5 +1,5 @@
 #This the code for my paper: https://arxiv.org/abs/2410.19987
-# (c) M. Andrecut (2024)
+#(c) M. Andrecut (2024)
 import numpy as np
 from skimage.transform import resize
 from tensorflow import keras
