@@ -10,7 +10,6 @@ def normalize0(x):
     for n in range(N):
         x[n] -= np.mean(x[n])
         x[n] = x[n]/np.linalg.norm(x[n])
-    x = np.reshape(x,(N,L*L)).astype("float32")
     return np.reshape(x,(N,L*L)).astype("float32")
 
 def normalize(x):
