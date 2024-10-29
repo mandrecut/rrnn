@@ -6,7 +6,7 @@ from tensorflow import keras
 
 def normalize0(x):
     (N,L,L) = np.shape(x)
-    x = np.sqrt(x)
+    x = np.sqrt(x) # optional
     for n in range(N):
         x[n] -= np.mean(x[n])
         x[n] = x[n]/np.linalg.norm(x[n])
@@ -15,7 +15,7 @@ def normalize0(x):
 
 def normalize(x):
     (N,L,L) = np.shape(x)
-    x = np.sqrt(x)    
+    x = np.sqrt(x)  # optional   
     f = np.zeros((N,L,L//2+1),dtype="float32") 
     for n in range(N):
         x[n] -= np.mean(x[n])
